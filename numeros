@@ -1,0 +1,11 @@
+--Eq es una clase de tipos que compara "=" los parametros que se le arrojan
+numero :: Eq a => [a] -> [a] -> Int
+numero x y = length [(x,y) | (x,y) <- zip x y, x/=y]
+-- hallar el length para todo (x,y) tal que (x,y) cumplan con lo siguiente:
+--x diferente de y
+
+main = do
+  print(numero "mesa" "rosa")
+  print(numero "pez" "pie")
+--excepción
+  print(numero "mariposas" "escaleras")
